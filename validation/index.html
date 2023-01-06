@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+    span{
+        color: red;
+    }
+    input{
+        font-size: larger;
+    }
+    label{
+        font-size: larger;
+    }
+    #container{
+                   border: 2px solid black;
+                   height: 350px;
+                   width: 250px;
+                   padding: 50px;
+                   margin: 150px 500px ;
+    }
+
+    #btn{
+            width: 150px;
+            height: 30px;
+            font-size: larger;
+            background: rgb(20, 119, 20);
+            border-radius: 25px;
+    }
+  </style>
+</head>
+<body>
+    
+<div id="container">
+
+    
+    <label>Name: &emsp;</label>
+    <input id="name" type="text" > <br>
+    <span id="nameError"></span>
+    
+    <br>
+    <label>Password</label>
+    <input id="pass" type="password" > <br>
+    <span id="passError"></span>
+    
+    <br>
+    <label>Confirm <br> Password</label>
+    <input id="confpass" type="password" > <br>
+    <span id="confpassError"></span>
+    
+    <br> <br>
+    <button id="btn">Submit</button>
+    
+    
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+// document.querySelector('#btn').addEventListener('click', function(){
+//     let  uname = document.getElementById('name').value ;
+//     document.getElementById('nameError').textContent = uname;
+// })
+
+
+
+document.querySelector('#btn').addEventListener('click', function(){
+    let  uname = document.getElementById('name').value ;
+    if(uname.length<5 ){
+        document.getElementById('nameError').textContent = "**Username must be between 3 and 20" ;
+    }
+
+
+    let  pass = document.getElementById('pass').value ;
+    if(pass.length<8 ){
+        document.getElementById('passError').textContent = "**Password must has atleast 8 characters" ;
+    }
+
+
+    let  confpass = document.getElementById('confpass').value ;
+    if(pass != confpass ){
+        document.getElementById('confpassError').textContent = "** please enter same Password" ;
+    }
+
+
+
+})
+
+
+</script>
+</body>
+</html>
